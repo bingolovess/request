@@ -2,9 +2,11 @@ package com.bingo.request;
 
 import android.util.Log;
 
+import com.bingo.request.callback.ExceptionListener;
 import com.bingo.request.callback.ProgressCallback;
 import com.bingo.request.callback.ResultCallback;
 import com.bingo.request.engine.HttpEngine;
+import com.bingo.request.utils.CommonResultHandler;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -30,7 +32,7 @@ public class OkGo implements HttpEngine {
     private OkGo() {
     }
 
-    public static OkGo get() {
+    public static OkGo getInstance() {
         if (helper == null) {
             synchronized (OkGo.class) {
                 if (helper == null) {
