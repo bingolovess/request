@@ -39,7 +39,7 @@ CommonResultHandler.getInstance().addExceptionListener(new ExceptionListener() {
 以okhttp为例
 
 ```java
-  	 @Override
+  	    @Override
             public void onFailure(Call call, IOException e) {
                 NetRuntimeException exception = ExceptionHandler.getInstance().handle(e);
                 LogUtils.e(exception.getMessage());
